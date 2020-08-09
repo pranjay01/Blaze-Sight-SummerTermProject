@@ -13,7 +13,8 @@ password = "Pranjay@014611922"
 # Using smtp server we use is gmail smtp server ( the port comes by default with the gmail server)
 smtp = "smtp.gmail.com" 
 port = 587
-
+#enable_starttls_auto= True
+#authentication:'plain'
 #what we want the body and subject contents to be
 subject_content="ALERT 911\n"
 body_content_1="Fire detected, we are "
@@ -31,7 +32,7 @@ def send_msg(modileNo,percentage):
 
     sms_gateway = str(modileNo) + '@tmomail.net'
     textmsg = MIMEMultipart()
-    textmsg['From'] = "SOUND PROFOUND"
+    textmsg['From'] = "BLAZE SIGHT"
     textmsg['To'] = sms_gateway
     textmsg['Subject'] = subject_content
     body = body_content_1 + str(percentage) + body_content_2
@@ -47,7 +48,7 @@ def send_email(receiver_email,percentage):
     server.starttls()
     server.login(email,password)
     emailMessage = MIMEMultipart()
-    emailMessage['From'] = "SOUND PROFOUND"
+    emailMessage['From'] = "BLAZE SIGHT"
     emailMessage['To'] = receiver_email
     emailMessage['Subject'] = subject_content
     body = body_content_1 + str(percentage) + body_content_2
